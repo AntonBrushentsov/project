@@ -1,0 +1,10 @@
+.slider {
+    border: 1px solid red;
+}
+
+.slider > img {
+    display: block;
+    width: 80%;
+    height: 450px;
+    margin: 0 auto;
+}

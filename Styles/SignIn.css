@@ -1,0 +1,15 @@
+.signIn {
+    color: white;
+}
+
+.signIn-form {
+    border: 1px solid red;
+    width: 300px;
+    margin: 20px auto;
+    
+}
+
+.signIn-form > input, .signIn-form > button {
+    display: block;
+    margin: 30px auto;
+}

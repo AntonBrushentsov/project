@@ -1,0 +1,46 @@
+.paintGrid {
+    width: 320px;
+    height: 420px;
+    border: 8px solid white;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.paintGrid-image {
+    display: block;
+    width: 100%;
+    height: 60%;
+    border-bottom: 8px solid white;
+}
+
+.paintGrid-text {
+    text-align: center;
+    margin: 10px auto;
+    font-size: large;
+    font-weight: bold;
+    color: white;
+}
+
+.paintGrid-button {
+    width: 100px;
+    height: 40px;
+    font-size: 16px;
+    background-color:black;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    border: 1px solid white;
+    outline: none;
+    transition-duration: 0.4s;
+}
+
+.paintGrid-button:hover {
+    color: rgb(67, 195, 245); 
+}
+
+.paintGrid-link {
+    margin-top: auto;
+    margin-bottom: 10px;
+}

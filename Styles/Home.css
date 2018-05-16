@@ -1,0 +1,9 @@
+.home {
+    height: 200px;
+    border: 1px solid red;
+}
+
+.home > h3 {
+    color: white;
+    text-align: center;
+}
