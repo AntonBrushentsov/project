@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 
 import Login from './Login';
 import Unlogin from './Unlogin';
 
 import '../../Styles/Single.css';
-
-const xhrFirst = new XMLHttpRequest();
-const xhrSecond = new XMLHttpRequest();
 
 class Single extends Component {
     constructor(props) {
@@ -17,31 +15,14 @@ class Single extends Component {
             login: true
         };
     }
-
     componentDidMount() {
-        const {item : { id } } = this.props;
-        xhrFirst.open('POST', '/id', true);
-        xhrFirst.send(id);
-        xhrSecond.open('GET', '/data', true);   
-        xhrSecond.send();
-        xhrSecond.onload = () => {
-            if( xhrSecond.readyState === 4 && xhrSecond.status === 200 ) {
-                const data = xhrSecond.responseText;
-                this.setState({ data: data });
-            } else {
-                console.error('OOPS :(', xhrSecond.statusText);
-            }
-        };
-    }
-
-    componentWillUnmount() {
-        xhrFirst.abort();
-        xhrSecond.abort();
+        const {item : { id } }  = this.props;
+        axios.post('/id', id).catch(error => console.log(error));
+        axios.get('/data').then(res => this.setState({ data: res.data })).catch(error => console.log(error));
     }
 
     render() {
         const { item: { image, author, title, year, likes } } = this.props;
-        console.log('LIKES: ', likes);
         const { data, login } = this.state;
         return(
             <div className = 'single' >

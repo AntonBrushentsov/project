@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import '../../Styles/PaintGrid.css';
 
-const PaintGrid = ({ item: { id, title, author, image }, match }) => (
+const Paints = ({ item: { id, title, author, image }, match }) => (
     <div className = 'paintGrid'>
         <img src = {image} alt = 'image' className = 'paintGrid-image' />
         <div className = 'paintGrid-text' >{title}</div>
@@ -15,9 +15,9 @@ const PaintGrid = ({ item: { id, title, author, image }, match }) => (
     </div>
 );
 
-PaintGrid.propTypes = {
+Paints.propTypes = {
     item: PropTypes.object.isRequired,
     match: PropTypes.object.isRequired
 };
 
-export default PaintGrid;
+export default Paints;

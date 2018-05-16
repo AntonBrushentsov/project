@@ -1,11 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import PaintGrid from './PaintGrid';
+import PaintsContainer from '../containers/PaintsContainer';
 
 import '../../Styles/Genres.css';
 
-const Genres = ({ route: { match } , data }) => (
+const Genres = ({ match }) => (
+    <div className = 'content'>
+        <h3>На этой странице вас будет информация о таком жанре живописи как {match.url}</h3>
+        <div className = 'content-description' >
+             Вот тут по идее будет немного инфы о самом жанре   
+        </div>
+        <PaintsContainer />
+    </div>
+);
+
+Genres.propTypes = {
+    match: PropTypes.object
+};
+
+export default Genres;
+
+
+
+/*const Genres = ({ route: { match } , data }) => (
     <div className = 'content'>
         <h3>На этой странице вас будет информация о таком жанре живописи как {match.params.type}</h3>
         <div className = 'content-description' >
@@ -16,11 +34,8 @@ const Genres = ({ route: { match } , data }) => (
                 .map( (item, index) => <PaintGrid key = { index } { ...{item, match} }/>) }
         </div>            
     </div>
-);
+);*/
 
-Genres.propTypes = {
-    data: PropTypes.array.isRequired,
-    route: PropTypes.object.isRequired
-};
 
-export default Genres;
+
+

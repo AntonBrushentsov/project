@@ -1,24 +1,33 @@
 import React from 'react';
-import { Route, Redirect, Switch, withRouter } from 'react-router-dom';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import { Route, Redirect, Switch } from 'react-router-dom';
  
-import Header from './components/Header';
-import Genres from './components/Genres';
 import Home from './components/Home';
-import Footer from './components/Footer';
 import Contacts from './components/Contacts';
 import NotFound from './components/NotFound';
-import Single from './components/Single';
 import SignIn from './components/SignIn';
+import Genres from './components/Genres';
+import Layout from './components/Layout';
 
 import '../Styles/App.css';
 
-const App = ({ data }) => (
+const App = () => (
     <div>
-        <Header />
-        <Switch>
+        <Layout>
+            <Switch>
+                <Route path = '/' exact render = { () => <Redirect to = 'Home' />} />
+                <Route path = '/Genres/:type' component = { Genres } exact/>
+                <Route path = '/Home' component = { Home } />
+                <Route path = '/Contacts' component = { Contacts } />
+                <Route path = '/SignIn'  component = { SignIn } />
+                <Route component = { NotFound } />
+            </Switch>
+        </Layout >
+    </div>
+);
+
+export default App;
+/*
+<Switch>
             <Route path = '/' exact render = { () => <Redirect to = 'Home' />} />
             <Route path = '/Genres/:type' render = { route  => <Genres {  ...{route, data} }/> } exact/>
             <Route path = '/Home' component = { Home } />
@@ -26,27 +35,24 @@ const App = ({ data }) => (
             <Route path = '/SignIn'  component = { SignIn } />
             {data.map( (item, index) => <Route path = {`/Genres/:type/${item.id}`} render = { route => <Single { ...{item, route} }/> } key = { index } /> )}
             <Route component = { NotFound } />
-        </Switch>
-        <Footer />
-    </div>
-);
+</Switch>
+*/
 
-const mapStateToProps = state => {
+/*const mapStateToProps = state => {
     return {
         data: state.listReducer
     };
-};
+};*/
 
-const mapDispatchToProps = dispatch => {
+/*const mapDispatchToProps = dispatch => {
     return bindActionCreators({
         
     }, dispatch);
-};
+};*/
 
-App.propTypes = {
+/*App.propTypes = {
     data: PropTypes.array.isRequired,
     route: PropTypes.object
-};
-
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
+};*/
+/*withRouter(connect(mapStateToProps, mapDispatchToProps)(App));*/
                     
