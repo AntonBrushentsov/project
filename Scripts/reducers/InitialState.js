@@ -67,6 +67,6 @@ export default [
         genre: 'Still-Life',
         image: 'https://pustunchik.ua/uploads/school/131c13e0144a0365708c5ce86562d6f2.jpg', 
         decription: 'Тут возможно будет описание',
-        likes: 12
+        likes: 17
     },
 ]

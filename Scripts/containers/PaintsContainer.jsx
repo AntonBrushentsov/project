@@ -9,6 +9,7 @@ import '../../Styles/Genres.css';
 
 const PaintsContainer = ({ data, match }) => (
     <div className = 'content-filmGrid' >
+        {console.log(match)}
         {data.filter( item => item.genre === match.params.type )
             .map( (item, index) => <Paints key = { index } { ...{item, match} }/>)}
     </div>

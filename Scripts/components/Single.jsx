@@ -15,14 +15,15 @@ class Single extends Component {
             login: true
         };
     }
+
     componentDidMount() {
-        const {item : { id } }  = this.props;
+        const { 0: { id } }  = this.props;
         axios.post('/id', id).catch(error => console.log(error));
         axios.get('/data').then(res => this.setState({ data: res.data })).catch(error => console.log(error));
     }
 
     render() {
-        const { item: { image, author, title, year, likes } } = this.props;
+        const { 0: { image, author, title, year, likes } } = this.props;
         const { data, login } = this.state;
         return(
             <div className = 'single' >
@@ -32,14 +33,14 @@ class Single extends Component {
                     <img src = { image } alt = 'image' className = 'single-image' />
                     <div className = 'single-description'>{ data === '' ? 'Loading...': data }</div>
                 </div>
-                { login === true ? <Login likes = { likes }/> : <Unlogin /> }
+                { login === true ? <Login likes = { likes }/> : <Unlogin /> }   
             </div>
         );
     }
 }
 
 Single.propTypes = {
-    item: PropTypes.object.isRequired
+    0: PropTypes.object.isRequired
 };
 
 export default Single;
