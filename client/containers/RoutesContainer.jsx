@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import SingleContainer from './SingleContainer';
 
-import '../../Styles/Genres.css';
+import '../Styles/Genres.css';
 
 const RoutesContainer = ({ data }) => (
     data.map( (item, index) => <Route path = {`/Genres/:type/${item.id}`} component = { SingleContainer } key = { index } /> )

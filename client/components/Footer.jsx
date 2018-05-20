@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../../Styles/Footer.css';
+import '../Styles/Footer.css';
 
 import fb from '../../files/fb.png';
 import vk from '../../files/vk.png';

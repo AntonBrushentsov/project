@@ -4,12 +4,12 @@ import { Route, Redirect, Switch } from 'react-router-dom';
 import Home from './components/Home';
 import Contacts from './components/Contacts';
 import NotFound from './components/NotFound';
-import SignIn from './components/SignIn';
+import Login from './components/Login';
 import Genres from './components/Genres';
 import Layout from './components/Layout';
 import RoutesContainer from './containers/RoutesContainer';
 
-import '../Styles/App.css';
+import './Styles/App.css';
 
 const App = () => (
     <div>
@@ -19,7 +19,7 @@ const App = () => (
                 <Route path = '/Genres/:type' component = { Genres } exact/>
                 <Route path = '/Home' component = { Home } />
                 <Route path = '/Contacts' component = { Contacts } />
-                <Route path = '/SignIn'  component = { SignIn } />
+                <Route path = '/Login'  component = { Login } />
                 <RoutesContainer />
                 <Route component = { NotFound } />
             </Switch>

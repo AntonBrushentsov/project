@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 
-import Login from './Login';
-import Unlogin from './Unlogin';
+import Authorized from './Authorized';
+import Unauthorized from './Unauthorized';
 
-import '../../Styles/Single.css';
+import '../Styles/Single.css';
 
 class Single extends Component {
     constructor(props) {
@@ -33,7 +33,7 @@ class Single extends Component {
                     <img src = { image } alt = 'image' className = 'single-image' />
                     <div className = 'single-description'>{ data === '' ? 'Loading...': data }</div>
                 </div>
-                { login === true ? <Login likes = { likes }/> : <Unlogin /> }   
+                { login === true ? <Authorized likes = { likes }/> : <Unauthorized /> }   
             </div>
         );
     }

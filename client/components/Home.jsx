@@ -2,7 +2,7 @@ import React from 'react';
 
 import Title from './Title';
 
-import '../../Styles/Home.css';
+import '../Styles/Home.css';
 
 const Home = () => (
     <div>

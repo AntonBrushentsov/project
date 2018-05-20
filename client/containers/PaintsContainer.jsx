@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import Paints from '../components/Paints';
 
-import '../../Styles/Genres.css';
+import '../Styles/Genres.css';
 
 const PaintsContainer = ({ data, match }) => (
     <div className = 'content-filmGrid' >

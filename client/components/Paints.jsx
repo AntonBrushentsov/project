@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import '../../Styles/PaintGrid.css';
+import '../Styles/PaintGrid.css';
 
 const Paints = ({ item: { id, title, author, image }, match }) => (
     <div className = 'paintGrid'>

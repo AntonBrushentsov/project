@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import PaintsContainer from '../containers/PaintsContainer';
 
-import '../../Styles/Genres.css';
+import '../Styles/Genres.css';
 
 const Genres = ({ match }) => (
     <div className = 'content'>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
-import '../../Styles/Header.css';
+import '../Styles/Header.css';
 
 import background from '../../files/search.png';
 
@@ -39,7 +39,7 @@ class Header extends Component {
                         </div>
                         <img src = { background } alt = 'search' onClick = { this.search } className = { isSearchVisible ? 'menu-searchIcon searchIcon-hidden' : 'menu-searchIcon' }/>
                     </li>
-                    <li><NavLink to = '/SignIn' className = 'menu-link' activeClassName = 'menu-activeLink' >Войти</NavLink></li>
+                    <li><NavLink to = '/Login' className = 'menu-link' activeClassName = 'menu-activeLink' >Войти</NavLink></li>
                 </ul>
             </div>
         );

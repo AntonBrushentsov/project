@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../../Styles/Title.css';
+import '../Styles/Title.css';
 
 const Title = () => (
     <div className = 'title' >
