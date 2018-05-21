@@ -25,12 +25,12 @@ class Single extends Component {
         const { 0: { image, author, title, year, likes } } = this.props;
         const { data, login } = this.state;
         return(
-            <div className = 'single' >
-                <p>{ author }</p>
-                <p>{ title } ({ year })</p>
-                <div className = 'single-content' >
-                    <img src = { image } alt = 'image' className = 'single-image' />
-                    <div className = 'single-description'>{ data === '' ? 'Loading...': data }</div>
+            <div className='single'>
+                <p className='single__text'>{ author }</p>
+                <p className='single__text'>{ title } ({ year })</p>
+                <div className='single__content'>
+                    <img src={ image } alt='image' className='content__image' />
+                    <div className = 'content__data'>{ data === '' ? 'Loading...': data }</div>
                 </div>
                 { login === true ? <Authorized likes = { likes }/> : <Unauthorized /> }   
             </div>

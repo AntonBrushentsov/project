@@ -7,7 +7,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import App from './Client/App';
 import rootReducer from './Client/reducers/Index';
 
-const customMiddleWare = (/*store*/) => next => action => {
+const customMiddleWare = () => next => action => {
     console.log('Middleware triggered:', action);
     next(action);
 };

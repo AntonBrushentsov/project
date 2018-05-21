@@ -1,15 +1,10 @@
-.content-filmGrid {
+.genres {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 } 
 
-.content > h3 {
-    text-align: center;
-    color: white;
-}
-
-.content-description {
+.description {
     height: 150px; 
     border: 1px solid red;
     text-align: center;

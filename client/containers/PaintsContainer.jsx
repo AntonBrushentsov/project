@@ -8,8 +8,7 @@ import Paints from '../components/Paints';
 import '../Styles/Genres.css';
 
 const PaintsContainer = ({ data, match }) => (
-    <div className = 'content-filmGrid' >
-        {console.log(match)}
+    <div className='genres'>
         {data.filter( item => item.genre === match.params.type )
             .map( (item, index) => <Paints key = { index } { ...{item, match} }/>)}
     </div>

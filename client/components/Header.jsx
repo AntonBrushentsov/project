@@ -19,27 +19,27 @@ class Header extends Component {
     render() {
         const { isSearchVisible } = this.state;
         return (
-            <div className = 'header' >
-                <ul className = 'header-menu' >
-                    <li><Link to = '/Home' className = 'menu-logo'></Link></li>
-                    <li><NavLink to = '/Home' className = 'menu-link' activeClassName = 'menu-activeLink' >Home</NavLink></li>
+            <div className='header'>
+                <ul className='menu'>
+                    <li><Link to='/Home' className='logo'></Link></li>
+                    <li><NavLink to = '/Home' className='menu__link' activeClassName='menu__activeLink'>Home</NavLink></li>
                     <li>
-                        <NavLink to = '#' className = 'menu-link' activeClassName = 'menu-activeLink' >Жанры ↓</NavLink>
-                        <ul className = 'menu-submenu' >
-                            <li><Link to = '/Genres/Still-Life' className = 'submenu-link' >Натюрморт</Link></li>
-                            <li><Link to = '/Genres/Portrait' className = 'submenu-link' >Портрет</Link></li>
-                            <li><Link to = '/Genres/Landscape' className = 'submenu-link' >Пейзаж</Link></li>
+                        <NavLink to='#' className='menu__link' activeClassName='menu__activeLink'>Жанры ↓</NavLink>
+                        <ul className='menu__submenu' >
+                            <li><Link to='/Genres/Still-Life' className='submenu__link'>Натюрморт</Link></li>
+                            <li><Link to='/Genres/Portrait' className='submenu__link'>Портрет</Link></li>
+                            <li><Link to='/Genres/Landscape' className='submenu__link'>Пейзаж</Link></li>
                         </ul>
                     </li>
-                    <li><NavLink to = '/Contacts' className = 'menu-link' activeClassName = 'menu-activeLink' >Contacts</NavLink></li>
+                    <li><NavLink to='/Contacts' className='menu__link' activeClassName='menu__activeLink'>Contacts</NavLink></li>
                     <li>
-                        <div className = { isSearchVisible ? 'menu-searchInput searchInput-active' : 'menu-searchInput searchInput-hidden' } >
-                            <input type = 'text' />
-                            <img src = { background } width='20px' height='20px;' alt = 'search'/>
+                        <div className={ isSearchVisible ? 'menu__searchInput menu__searchInput__active' : 'menu__searchInput menu__searchInput__hidden' }>
+                            <input type='text'/>
+                            <img src={ background } width='20px' height='20px;' alt='search'/>
                         </div>
-                        <img src = { background } alt = 'search' onClick = { this.search } className = { isSearchVisible ? 'menu-searchIcon searchIcon-hidden' : 'menu-searchIcon' }/>
+                        <img src={ background } alt = 'search' onClick={ this.search } className={ isSearchVisible ? 'menu__searchIcon menu__searchIcon__hidden' : 'menu__searchIcon' }/>
                     </li>
-                    <li><NavLink to = '/Login' className = 'menu-link' activeClassName = 'menu-activeLink' >Войти</NavLink></li>
+                    <li><NavLink to='/Login' className='menu__link' activeClassName='menu__activeLink'>Войти</NavLink></li>
                 </ul>
             </div>
         );

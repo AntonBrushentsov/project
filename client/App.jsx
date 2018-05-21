@@ -13,20 +13,18 @@ import RoutesContainer from './containers/RoutesContainer';
 import './Styles/App.css';
 
 const App = () => (
-    <div>
-        <Layout>
-            <Switch>
-                <Route path = '/' exact render = { () => <Redirect to = 'Home' />} />
-                <Route path = '/Genres/:type' component = { Genres } exact/>
-                <Route path = '/Home' component = { Home } />
-                <Route path = '/Contacts' component = { Contacts } />
-                <Route path = '/Login'  component = { Login } />
-                <Route path = '/Signup'  component = { Signup } />
-                <RoutesContainer />
-                <Route component = { NotFound } />
-            </Switch>
-        </Layout >
-    </div>
+    <Layout>
+        <Switch>
+            <Route path='/' exact render = { () => <Redirect to='Home'/> }/>
+            <Route path='/Genres/:type' component={ Genres } exact/>
+            <Route path='/Home' component={ Home }/>
+            <Route path='/Contacts' component={ Contacts }/>
+            <Route path='/Login' component={ Login }/>
+            <Route path='/Signup' component={ Signup } />
+            <RoutesContainer />
+            <Route component={ NotFound } />
+        </Switch>
+    </Layout >
 );
 
 export default App;

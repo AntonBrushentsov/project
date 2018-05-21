@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
+
 import '../Styles/Footer.css';
 
 import fb from '../../files/fb.png';
@@ -14,10 +16,15 @@ const images = [
     {src: i, link: 'https://www.instagram.com/'}];
 
 const Footer = () => (
-    <div className = 'footer' >
-        <div className = 'footer-information' >&copy;Pavel Efimov. 2018</div> 
-        <div className = 'footer-logo' ></div>       
-        <div className = 'footer-social' >{images.map( (item, index) =><a key = {index} target = '_blank' href = { item.link } ><img src = { item.src } alt = 'img' key = { index } /></a>)}</div>
+    <div className='footer'>
+        <div className='footer__information'>&copy;Pavel Efimov. 2018</div> 
+        <Link to='/Home' className='logo'></Link>       
+        <div className='footer__social' >
+            {images.map( (item, index) =>(
+                <a key={ index } target='_blank' href={ item.link } className='social__link'>
+                    <img className='social__image' src={ item.src } alt='img' key={ index }/>
+                </a>))}
+        </div>
     </div>
 );
 

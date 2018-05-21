@@ -36,7 +36,9 @@ class Login extends Component {
                     <button onClick={ sendData } className='form__button'>Войти</button>
                     <div className='form__information'>
                         <span className='information__text'>Нет аккаунта?</span>
-                        <Link to = '/Signup' className='information__link'><button className='information___button'>Регистрация</button></Link>
+                        <Link to = '/Signup' className='information__link'>
+                            <button className='information___button'>Регистрация</button>
+                        </Link>
                     </div>
                 </div>
             </Fragment>

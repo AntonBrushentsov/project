@@ -6,13 +6,11 @@ import PaintsContainer from '../containers/PaintsContainer';
 import '../Styles/Genres.css';
 
 const Genres = ({ match }) => (
-    <div className = 'content'>
+    <React.Fragment>
         <h3>На этой странице вас будет информация о таком жанре живописи как {match.url}</h3>
-        <div className = 'content-description' >
-             Вот тут по идее будет немного инфы о самом жанре   
-        </div>
+        <div className='description'>Вот тут по идее будет немного инфы о самом жанре</div>
         <PaintsContainer />
-    </div>
+    </React.Fragment>
 );
 
 Genres.propTypes = {

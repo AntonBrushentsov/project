@@ -2,7 +2,7 @@
     margin-top: 4px;  
 }
 
-.header-menu {
+.menu {
     display: flex;
     align-items: center;
     border-bottom: 1px solid silver;
@@ -11,7 +11,7 @@
     padding: 0px;
 }
 
-.menu-link {
+.menu__link {
     width: 90px;
     font-size: large;
     display: block;
@@ -24,49 +24,47 @@
     color: white;
 }
 
-.menu-logo {
+.logo {
     display: block;
     background: url("https://vincent.billey.me/talks/react-putting-js-in-your-face/assets/react-logo.png") no-repeat 50% -5px;
     background-size: contain;
     width: 80px;
     height: 70px;
-    margin-left: 20px;
     transition-duration: 0.4s;
 }
 
-.menu-logo:hover {
+.logo:hover {
     transform: scale(1.2);
     cursor: pointer;
 }
 
-.menu-link:hover {
+.menu__link:hover {
     box-shadow: 0px -4px 0px 0px rgb(67, 195, 245);
     color: rgb(67, 195, 245);
 }
 
-.header-menu > li {
+.menu > li {
     flex-shrink: 0;
 }
 
-.header-menu > li:nth-child(5) { 
+.menu > li:nth-child(5) { 
     margin-left: auto;
 }
 
-.header-menu > li:last-child {
+.menu > li:last-child {
     margin-right: 20px;
-
 }
 
-.header-menu > li:first-child {
+.menu > li:first-child {
     flex-shrink: 1;
 }
 
-.menu-activeLink {
+.menu__activeLink {
     box-shadow: 0px -4px 0px 0px rgb(67, 195, 245);
     color: rgb(67, 195, 245);
 }
 
- .menu-submenu {
+ .menu__submenu {
     max-height: 0;
     opacity: 0;
     margin: 0px;
@@ -81,7 +79,7 @@
     font-size: 20px;
 }
 
-.menu-submenu > li {
+.menu__submenu > li {
     display: block;
     width: 100px;
     height: 30px;
@@ -92,56 +90,52 @@
     background-color: black;
 }
 
-.menu-submenu > li:first-child {
+.menu__submenu > li:first-child {
     border-top: 1px solid silver;
 }
 
-.header-menu > li:hover > .menu-submenu {
+.menu > li:hover > .menu__submenu {
     opacity: 1;
     max-height: inherit;
 }
 
-.submenu-link {
+.submenu__link {
     text-decoration: none;
     color: white;
     transition-duration: 0.4s;
 }
 
-.submenu-link:hover {
+.submenu__link:hover {
     color: rgb(67, 195, 245);
 }
 
-.menu-searchInput {
+.menu__searchInput {
     transition-duration: 0.6s; 
     display: block;
 }
 
-.searchInput-active {
+.menu__searchInput__active {
     opacity: 1;
     display: block;
 }
 
-.searchInput-hidden {
+.menu__searchInput__hidden {
     opacity: 0;
     display: none;
 }
 
-.menu-searchIcon {
+.menu__searchIcon {
    cursor: pointer;
    transition-duration: 0.4s;
 }
 
-.menu-searchIcon:hover {
+.menu__searchIcon:hover {
     transform: scale(1.1);
 }
-.searchIcon-hidden {
+.menu__searchIcon__hidden {
     display: none;
    /*position: absolute;
    left: -50px;
    top: 30px;
    display: none;*/
 }
-
-/*.header-menu  div {
-    display: inline-block;
-}*/
