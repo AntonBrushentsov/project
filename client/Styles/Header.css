@@ -19,9 +19,8 @@
     line-height: 70px;
     padding: 0 15px;
     text-decoration: none;
-    /*color: black;*/
+    font-size: 20px;
     transition-duration: 0.4s;
-    font-size: 18px;
     color: white;
 }
 
@@ -79,7 +78,7 @@
     border-right: 1px solid silver;
     top: 74px;
     transition: 0.4s;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .menu-submenu > li {

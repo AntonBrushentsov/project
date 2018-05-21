@@ -18,8 +18,7 @@ class Single extends Component {
 
     componentDidMount() {
         const { 0: { id } }  = this.props;
-        axios.post('/id', id).catch(error => console.log(error));
-        axios.get('/data').then(res => this.setState({ data: res.data })).catch(error => console.log(error));
+        axios.post('/data', id).then(res => this.setState({ data: res.data })).catch(error => console.log(error));
     }
 
     render() {

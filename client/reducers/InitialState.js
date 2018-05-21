@@ -69,4 +69,4 @@ export default [
         decription: 'Тут возможно будет описание',
         likes: 17
     },
-]
+];

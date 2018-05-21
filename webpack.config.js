@@ -22,13 +22,10 @@ module.exports = {
                 use: 'babel-loader'
             },
             {
-                test: /\.jsx$/,
+                test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
-                loader: "eslint-loader",
-                options: {
-                    cache: true
-                }
-              },
+                use: ['babel-loader', 'eslint-loader']
+            },
             {
                 test: /\.css$/,
                 use: ExtractTextPlugin.extract({
@@ -39,7 +36,7 @@ module.exports = {
                             loader: 'postcss-loader',
                             options: {
                                 ident: 'postcss',
-                                plugins: loader => [require('autoprefixer')]
+                                plugins: () => [require('autoprefixer')]
                             }
                         }
                     ]
@@ -48,12 +45,12 @@ module.exports = {
             {
                 test: /\.(png|jpg|gif)$/,
                 use: [
-                  {
-                    loader: 'url-loader',
-                    options: {
-                      limit: 10000000
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 10000000
+                        }
                     }
-                  }
                 ]
             },
         ]
