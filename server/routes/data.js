@@ -1,8 +1,8 @@
 import express from 'express';
 import payload from 'request-payload';
-import { getDescriptionByID } from '../Database';
+import { getDescriptionByID } from '../database';
 
-let router = express.Router();
+const router = express.Router();
 
 router.post('/', (req, res) => {
     payload(req,  body => {

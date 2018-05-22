@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import crypto from 'crypto-js';
 import { Link } from 'react-router-dom';
 
 import '../Styles/Form.css'; 
@@ -45,14 +44,12 @@ class Signup extends Component {
 
         this.submit = () => {
             const { login, password } = this.state;
-            const str = crypto.AES.encrypt(password, login).ciphertext.toString();
-            axios.post('/registration', { login, str })
+            axios.post('/registration', { login, password })
                 .then(result => {
                     const { serverError, answer } = result.data;
                     this.setState({ serverError, answer });
                 })
                 .catch( error => console.error('Error:', error));
-
         },
 
         this.isButtonEnabled = () => {
@@ -77,7 +74,7 @@ class Signup extends Component {
                         <input type='password' placeholder='repeat password' className='form__input' value={ repeat } onChange={ changeRepeat }/>
                         <span className='form__error'>{ repeatError }</span>
                     </div>
-                    <button className= { isButtonEnabled() ? 'form__button' : 'form__button form__button__disabled' } onClick={ submit } disabled={ !isButtonEnabled() } >Регистрация</button>
+                    <button className= { isButtonEnabled() ? 'form__button' : 'form__button form__button__disabled' } onClick={ submit } disabled={ !isButtonEnabled() }>Регистрация</button>
                     <div className='form__serverError'>{ serverError }</div>
                 </div>
             );

@@ -1,5 +1,5 @@
 .header {
-    margin-top: 4px;  
+    margin-top: 0px;  
 }
 
 .menu {
@@ -34,7 +34,7 @@
 }
 
 .logo:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
     cursor: pointer;
 }
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import IsUserLogin from '../utils/IsUserLogin';
 
 import '../Styles/Header.css';
 
@@ -39,7 +40,7 @@ class Header extends Component {
                         </div>
                         <img src={ background } alt = 'search' onClick={ this.search } className={ isSearchVisible ? 'menu__searchIcon menu__searchIcon__hidden' : 'menu__searchIcon' }/>
                     </li>
-                    <li><NavLink to='/Login' className='menu__link' activeClassName='menu__activeLink'>Войти</NavLink></li>
+                    { <IsUserLogin /> }
                 </ul>
             </div>
         );
