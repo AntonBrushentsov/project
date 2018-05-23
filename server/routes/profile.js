@@ -12,7 +12,6 @@ router.post('/', (req, res) => {
             .then( result => {
                 const { login, password } = result[0];
                 const decrypted = cryptoJS.AES.decrypt(password, login).toString(cryptoJS.enc.Utf8);
-                console.log('DECT: ', decrypted);
                 res.send({ login, decrypted });
             })
             .catch(err => console.error(err)); 

@@ -35,3 +35,8 @@ export async function getUserByToken(token) {
     const query = await client.query('SELECT login, password FROM tables.users where token = $1', [token]);
     return query.rows;
 }
+
+export async function deleteToken(token) {
+    const query = await client.query('update tables.users set token = default where token = $1', [token]);
+    return query.rows;
+}

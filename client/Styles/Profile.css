@@ -1,0 +1,31 @@
+.profile {
+    color: white;
+}
+
+.profile__button {
+    display: block;
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
+    font-size: 16px;
+    background-color: black;
+    border-radius: 5px;
+    color: white;
+    border: 1px solid white;
+    outline: none;
+    transition-duration: 0.4s;
+    padding: 2px;
+}
+
+.profile__button:hover {
+color: rgb(67, 195, 245); 
+}
+
+.profile__link {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    margin: 0 auto;
+}

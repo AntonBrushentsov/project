@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import axios from 'axios';
 
 import '../Styles/Form.css'; 
@@ -36,11 +36,8 @@ class Login extends Component {
             axios.post('/login', { login, password })  
                 .then(result => {
                     const { serverError, token } = result.data;
-                    localStorage.setItem('jwtToken', token);
-                    if (token) {
-                        axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-                    } else {
-                        delete axios.defaults.headers.common['Authorization'];
+                    if(token) {
+                        localStorage.setItem('jwtToken', token);
                     }
                     this.setState({ serverError});
                 })
@@ -56,29 +53,40 @@ class Login extends Component {
     render() {
         const { login, password, loginError, passwordError, serverError } = this.state;
         const { changeLogin, changePassword, sendData, isButtonEnabled } = this;
-        return (
-            <Fragment>
-                <div className='form' >
-                    <div className='form__element'>
-                        <input type='text' placeholder='login' value={ login } onChange={ changeLogin } className='form__input'/>
-                        <span className='form__error'>{ loginError }</span>
+        if (localStorage.jwtToken) {
+            return <Redirect to='/Profile'/>;  
+        } else {
+            return (
+                <Fragment>
+                    <div className='form' >
+                        <div className='form__element'>
+                            <input type='text' placeholder='login' value={ login } onChange={ changeLogin } className='form__input'/>
+                            <span className='form__error'>{ loginError }</span>
+                        </div>
+                        <div className='form__element'>
+                            <input type='password' placeholder='password' value={ password } onChange={ changePassword } className='form__input'/>
+                            <span className='form__error'>{ passwordError }</span>
+                        </div>
+                        <button onClick={ sendData } className= { isButtonEnabled() ? 'form__button' : 'form__button form__button__disabled'} disabled={ !isButtonEnabled() }>Войти</button>
+                        <div className='form__information'>
+                            <div className='form__serverError'>{ serverError }</div>
+                            <span className='information__text'>Нет аккаунта?</span>
+                            <Link to = '/Signup' className='information__link'>
+                                <button className='form__button'>Регистрация</button>
+                            </Link>
+                        </div>
                     </div>
-                    <div className='form__element'>
-                        <input type='password' placeholder='password' value={ password } onChange={ changePassword } className='form__input'/>
-                        <span className='form__error'>{ passwordError }</span>
-                    </div>
-                    <button onClick={ sendData } className= { isButtonEnabled() ? 'form__button' : 'form__button form__button__disabled'} disabled={ !isButtonEnabled() }>Войти</button>
-                    <div className='form__information'>
-                        <div className='form__serverError'>{ serverError }</div>
-                        <span className='information__text'>Нет аккаунта?</span>
-                        <Link to = '/Signup' className='information__link'>
-                            <button className='form__button'>Регистрация</button>
-                        </Link>
-                    </div>
-                </div>
-            </Fragment>
-        );
+                </Fragment>
+            );
+        }
     }
 }
 
 export default Login;
+/*
+if (token) {
+    axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+} else {
+    delete axios.defaults.headers.common['Authorization'];
+}
+*/
