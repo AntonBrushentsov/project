@@ -10,9 +10,11 @@ router.post('/', (req, res) => {
         const { token } = body;
             getUserByToken(body)
             .then( result => {
-                const { login, password } = result[0];
-                const decrypted = cryptoJS.AES.decrypt(password, login).toString(cryptoJS.enc.Utf8);
-                res.send({ login, decrypted });
+                if(result.length !== 0) { 
+                    const { login, password } = result[0];
+                    const decrypted = cryptoJS.AES.decrypt(password, login).toString(cryptoJS.enc.Utf8);
+                    res.send({ login, decrypted });
+                }
             })
             .catch(err => console.error(err)); 
     });

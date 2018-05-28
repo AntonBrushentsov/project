@@ -1,0 +1,75 @@
+.data {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    flex-direction: column;
+    width: 70%;
+    margin: 20px auto;
+}
+
+.data__text, .likes__text {
+    color: white;
+    font-size: 18px;
+    margin-right: 4px;
+}
+
+.data__link {
+    display: block;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    margin:  auto;
+}
+
+.data__button, .likes__button {
+    display: block;
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
+    font-size: 16px;
+    background-color: black;
+    border-radius: 5px;
+    color: white;
+    border: 1px solid white;
+    outline: none;
+    transition-duration: 0.4s;
+    padding: 2px;
+    margin-top: 10px;
+}
+
+.data__button:hover, .likes__button:hover {
+    color: rgb(67, 195, 245); 
+}
+
+.data__likes {
+    border: 1px solid green;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.data__comments {
+    /*display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;*/
+    border: 1px solid blue;
+}
+
+.comments__block {
+    text-align: left;
+}
+
+.comments__name {
+    color: rgb(67, 195, 245);  
+    font-size: 18px;
+}
+
+.comments__comment {
+    color: rgb(67, 195, 245);  
+    font-size: 18px;
+}

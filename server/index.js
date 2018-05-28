@@ -15,9 +15,12 @@ app.use('/login', login);
 app.use('/profile', profile);
 app.use('/logout', logout);
 
-app.get(/^(?!\/?[data,registration,login]).+$/, (request, response) => {
+app.get(/^(?!\/?[data,registration,login,logout,profile]).+$/, (request, response) => {
     response.sendFile('/dist/index.html', { root: __dirname });  
 });
+
+app.listen(9000, () => console.log('server on port 9000'));
+
 
 /*app.post('/posts', verifyToken, (req, res) => {
     jwt.verify(req.token, 'someSecretKey', (err, authData) => {
@@ -54,5 +57,3 @@ function verifyToken(req, res, next) {
         res.sendStatus(403);
     }
 }*/
-
-app.listen(9000, () => console.log('server on port 9000'));

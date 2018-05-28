@@ -11,35 +11,37 @@ class Single extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: '',
-            login: true
+            text: '',
         };
     }
 
     componentDidMount() {
-        const { 0: { id } }  = this.props;
-        axios.post('/data', id).then(res => this.setState({ data: res.data })).catch(error => console.log(error));
+        const { data }  = this.props;
+        axios.post('/data', data[0].id).then(res => this.setState({ text: res.data })).catch(error => console.log(error));
     }
 
     render() {
-        const { 0: { image, author, title, year, likes } } = this.props;
-        const { data, login } = this.state;
+        console.log(this.props);
+        const { data, changeLikes } = this.props;
+        const { text } = this.state;
+        console.log('WERTY: ', data[0] );
         return(
             <div className='single'>
-                <p className='single__text'>{ author }</p>
-                <p className='single__text'>{ title } ({ year })</p>
+                <p className='single__text'>{ data[0].author }</p>
+                <p className='single__text'>{ data[0].title } ({ data[0].year })</p>
                 <div className='single__content'>
-                    <img src={ image } alt='image' className='content__image' />
-                    <div className = 'content__data'>{ data === '' ? 'Loading...': data }</div>
+                    <img src={ data[0].image } alt='image' className='content__image' />
+                    <div className = 'content__data'>{ text === '' ? 'Loading...': text }</div>
                 </div>
-                { login === true ? <Authorized likes = { likes }/> : <Unauthorized /> }   
+                { localStorage.jwtToken ? <Authorized likes={ data[0].likes } comments={ data[0].comments } changeLikes={ changeLikes }/> : <Unauthorized /> }   
             </div>
         );
     }
 }
 
 Single.propTypes = {
-    0: PropTypes.object.isRequired
+    data: PropTypes.array.isRequired,
+    changeLikes: PropTypes.func.isRequired
 };
 
 export default Single;

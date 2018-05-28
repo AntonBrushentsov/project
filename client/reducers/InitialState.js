@@ -7,7 +7,10 @@ export default [
         genre: 'Still-Life',
         image: 'http://www.palitra.co/wp-content/uploads/2013/11/1.jpg', 
         decription: 'Тут возможно будет описание',
-        likes: 12
+        likes: 12,
+        comments: [
+            {name: 'pasha', comment: 'pisos))))'}
+        ]
     },
     {
         id: 'qwertyui',
@@ -17,7 +20,8 @@ export default [
         genre: 'Still-Life',
         image: 'http://www.palitra.co/wp-content/uploads/2013/11/persiki-i-grushi-pol-sezann+.jpg', 
         decription: 'Тут возможно будет описание',
-        likes: 12
+        likes: 1,
+        comments: []
     },
     {
         id: 'ghnjmngs',
@@ -27,7 +31,8 @@ export default [
         genre: 'Still-Life',
         image: 'http://www.palitra.co/wp-content/uploads/2013/11/pic44.jpg', 
         decription: 'Тут возможно будет описание',
-        likes: 12
+        likes: 3,
+        comments: []
     },
     {
         id: 'vrtedgg',
@@ -37,7 +42,8 @@ export default [
         genre: 'Still-Life',
         image: 'http://www.palitra.co/wp-content/uploads/2013/11/Konchalovsciy_siren_v_korzine.jpg', 
         decription: 'Тут возможно будет описание',
-        likes: 12
+        likes: 5,
+        comments: []
     },
     {
         id: 'zcxvbnm',
@@ -47,7 +53,8 @@ export default [
         genre: 'Still-Life',
         image: 'http://www.palitra.co/wp-content/uploads/2013/11/8.jpg', 
         decription: 'Тут возможно будет описание',
-        likes: 12
+        likes: 6,
+        comments: []
     },
     {
         id: 'azsxdcfvgbhn',
@@ -57,7 +64,8 @@ export default [
         genre: 'Still-Life',
         image: 'https://danilovmaster.ru/images/items/2551.jpg', 
         decription: 'Тут возможно будет описание',
-        likes: 12
+        likes: 8,
+        comments: []
     },
     {
         id: 'gsdftyud',
@@ -67,6 +75,7 @@ export default [
         genre: 'Still-Life',
         image: 'https://pustunchik.ua/uploads/school/131c13e0144a0365708c5ce86562d6f2.jpg', 
         decription: 'Тут возможно будет описание',
-        likes: 17
+        likes: 4,
+        comments: []
     },
 ];
