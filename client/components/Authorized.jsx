@@ -6,14 +6,15 @@ import '../Styles/Data.css';
 class Authorized extends Component {
     constructor() {
         super();
-        this.changeLikes = () => {
-            this.props.changeLikes('yhtrdsfs', 'pasha');
+        this.changeLikes = () => {   
+            const { changeLikes, id } = this.props;
+            changeLikes(id);
         };
     }
 
     render() {
         const { likes, comments } = this.props;
-        console.log('PROPS: ', comments);
+        //console.log('PROPS: ', comments);
         const { changeLikes} = this;
         return (
             <div className='data'>
@@ -35,6 +36,7 @@ class Authorized extends Component {
 }
 
 Authorized.propTypes = {
+    id: PropTypes.string.isRequired,
     likes: PropTypes.number.isRequired,
     changeLikes: PropTypes.func.isRequired,
     comments: PropTypes.array.isRequired 

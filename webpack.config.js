@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const Autoprefixer = require('autoprefixer');
 
 
 module.exports = {
@@ -31,12 +32,15 @@ module.exports = {
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
                     use: [
-                        { loader: 'css-loader', options: { importLoaders: 1 } },
+                        { 
+                            loader: 'css-loader', 
+                            options: { importLoaders: 1 } 
+                        },
                         {
                             loader: 'postcss-loader',
                             options: {
                                 ident: 'postcss',
-                                plugins: () => [require('autoprefixer')]
+                                plugins: () => [Autoprefixer]
                             }
                         }
                     ]

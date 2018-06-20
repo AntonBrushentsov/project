@@ -24,7 +24,7 @@ class Single extends Component {
         console.log(this.props);
         const { data, changeLikes } = this.props;
         const { text } = this.state;
-        console.log('WERTY: ', data[0] );
+        console.log('WERTY: ', this.props);
         return(
             <div className='single'>
                 <p className='single__text'>{ data[0].author }</p>
@@ -33,7 +33,7 @@ class Single extends Component {
                     <img src={ data[0].image } alt='image' className='content__image' />
                     <div className = 'content__data'>{ text === '' ? 'Loading...': text }</div>
                 </div>
-                { localStorage.jwtToken ? <Authorized likes={ data[0].likes } comments={ data[0].comments } changeLikes={ changeLikes }/> : <Unauthorized /> }   
+                { localStorage.jwtToken ? <Authorized id={ data[0].id } likes={ data[0].likes } comments={ data[0].comments } changeLikes={ changeLikes }/> : <Unauthorized /> }   
             </div>
         );
     }

@@ -1,6 +1,6 @@
 export default id => (
     { 
-        type: 'CHANGE_LIKES', 
-        id
+        type: 'CHANGE_LIKES',
+        id 
     }
 );
