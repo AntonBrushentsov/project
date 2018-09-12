@@ -3,6 +3,7 @@ import initialState from './InitialState';
 let newState;
 //aaa,fpoejfewpojfpwefjkwpfj
 //fwejfowfjopwefpoek
+//grepkgpogkprekgrgkergkrpgegke[rk[kg[pgrkgep[]]]]
 export default (state = initialState, action ) => {
     switch(action.type) {
     case 'CHANGE_LIKES':
