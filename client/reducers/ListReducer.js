@@ -1,7 +1,8 @@
 import initialState from './InitialState';
 
 let newState;
-
+//aaa,fpoejfewpojfpwefjkwpfj
+//fwejfowfjopwefpoek
 export default (state = initialState, action ) => {
     switch(action.type) {
     case 'CHANGE_LIKES':
